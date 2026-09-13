@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import axios from "./util/axios.customzie";
+import Header from "./components/layout/header";
+import { Outlet } from "react-router-dom";
 
 function App() {
   useEffect(() => {
@@ -9,7 +11,12 @@ function App() {
     };
     fetchHelloWorld();
   }, []);
-  return <>hello world</>;
+  return (
+    <>
+      <Header />
+      <Outlet />
+    </>
+  );
 }
 
 export default App;
