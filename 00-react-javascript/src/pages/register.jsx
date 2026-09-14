@@ -20,7 +20,6 @@ const RegisterPage = () => {
         description: "Error",
       });
     }
-    console.log("Success:", res);
   };
 
   return (
