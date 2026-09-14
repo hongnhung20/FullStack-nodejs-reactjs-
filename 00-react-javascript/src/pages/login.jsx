@@ -11,6 +11,7 @@ const LoginPage = () => {
     console.log("res login ", res);
 
     if (res && res.EC === 0) {
+      localStorage.setItem("access_token", res.access_token);
       notification.success({
         message: "Login user",
         description: "Success",
