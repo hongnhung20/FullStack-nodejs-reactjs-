@@ -5,12 +5,13 @@ const instance = axios.create({
 });
 
 // Alter defaults after instance has been created
-// instance.defaults.headers.common["Authorization"] = AUTH_TOKEN;
 
 // Add a request interceptor
 instance.interceptors.request.use(
   function (config) {
     // Do something before the request is sent
+    const token = localStorage.getItem("access_token");
+    config.headers.Authorization = token ? `Bearer ${token}` : "";
     return config;
   },
   function (error) {
